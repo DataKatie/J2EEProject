@@ -5,29 +5,38 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author Katie
  */
 public class Room {
     private String RoomType;
-    private double price;
-    public double getPrice() {
+    private double basePrice;
+    private String description;
+    private String image;       
+    public double getBasePrice() {
         if (RoomType.equals("Standard"))
-                this.price = 127;
+                this.basePrice = 127;
         else if (RoomType.equals("Deluxe"))
-                this.price = 157;
+                this.basePrice = 157;
         else if (RoomType.equals("Superior"))
-                this.price = 187;
+                this.basePrice = 187;
         else if (RoomType.equals("Premium"))
-                this.price = 197;
+                this.basePrice = 197;
         else if (RoomType.equals("Suite") || RoomType.equals("Hot Tub Premimum"))
-                this.price = 267;
+                this.basePrice = 267;
         else if (RoomType.equals("Vineyard View Cottage"))
-                this.price = 287;
+                this.basePrice = 287;
         
                 
        
-        return price;
+        return basePrice;
     }
+    
+   public double calculateRoomRate(Date checkin, Date checkout){
+       //Needs to be implemented
+       return 0;
+   } 
 }

@@ -125,7 +125,7 @@ String specialRequests;
         
         //Code in here to take the dates and add extra for weekend days/summer season and subtract for promotions
         //Code to add up all dates and multiply by number of rooms 
-        
+        this.pricetotal = room.calculateRoomRate(checkin, checkout);
         return pricetotal;
     }
 
