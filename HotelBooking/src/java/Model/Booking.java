@@ -6,7 +6,8 @@
 package Model;
 
 import java.util.Date;
-
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Future;
 /**
  *
  * @author Katie
@@ -14,17 +15,26 @@ import java.util.Date;
 public class Booking {
 long reservationId;
 long guestId;
+
+@Min(value = 1, message = "At least one adult must be included in the booking")
 int numberOfAdults;
+
 int numberOfChildren;
+
 int numberOfRooms;
 String promotion;
+
+@Future (message = "Reservation date must be in the future")
 Date checkin;
+
+@Future (message = "Reservation date must be in the future")
 Date checkout;
 long hotelId;
-String RoomType ;
-double pricepernight;
+
+private Room room;
+
 double pricetotal;
-String dinnerReservations;
+
 String specialRequests;
 
     public long getReservationId() {
@@ -43,6 +53,7 @@ String specialRequests;
         this.guestId = guestId;
     }
 
+   
     public int getNumberOfAdults() {
         return numberOfAdults;
     }
@@ -99,32 +110,15 @@ String specialRequests;
         this.hotelId = hotelId;
     }
 
-    public String getRoomType() {
-        return RoomType;
+    public Room getRoom() {
+        return room;
     }
 
-    public void setRoomType(String RoomType) {
-        this.RoomType = RoomType;
+    public void setRoomType(Room room) {
+        this.room = room;
     }
 
-    public double getPricepernight() {
-        if (RoomType.equals("Standard"))
-                this.pricepernight = 127;
-        else if (RoomType.equals("Deluxe"))
-                this.pricepernight = 157;
-        else if (RoomType.equals("Superior"))
-                this.pricepernight = 187;
-        else if (RoomType.equals("Premium"))
-                this.pricepernight = 197;
-        else if (RoomType.equals("Suite") || RoomType.equals("Hot Tub Premimum"))
-                this.pricepernight = 267;
-        else if (RoomType.equals("Vineyard View Cottage"))
-                this.pricepernight = 287;
-        
-                
-       
-        return pricepernight;
-    }
+    
 
    
     public double getPricetotal() {
@@ -137,13 +131,7 @@ String specialRequests;
 
   
 
-    public String getDinnerReservations() {
-        return dinnerReservations;
-    }
-
-    public void setDinnerReservations(String dinnerReservations) {
-        this.dinnerReservations = dinnerReservations;
-    }
+ 
 
     public String getSpecialRequests() {
         return specialRequests;
