@@ -9,14 +9,14 @@ NoRooms int not null,
 Promotion varchar(30),
 CheckIn date not null,
 CheckOut date not null,
-RoomType varchar(100),
+roomTypeId bigint,
 PricePerNight double,
 PriceTotal double,
 DinnerReservations varchar(50),
 SpecialRequests varchar(300)
  );
  
- 
+ select * from booking;
  
  CREATE TABLE Hotels(
     HotelID        INT(5)        NOT NULL   AUTO_INCREMENT,
@@ -61,9 +61,14 @@ CREATE TABLE Rooms(
     primary key(ID)
 );
 
+alter TABLE Rooms add column Description varchar(200);
+alter TABLE Rooms add column Image varchar(50);
+
 select * from booking;
 alter table booking modify roomTypeId int(5);
 alter table booking modify hotelId int(5);
 
 alter table booking add foreign key (RoomTypeID) references rooms(id);
 alter table booking add foreign key (hotelId) references hotels(hotelId);
+
+select * from hotels;
