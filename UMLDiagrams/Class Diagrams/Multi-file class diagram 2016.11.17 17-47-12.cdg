@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Booking" package="Model" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="reservationId" type="long" visibility="package"/>
+        <Field name="guestId" type="long" visibility="package"/>
+        <Field name="numberOfAdults" type="int" visibility="package"/>
+        <Field name="numberOfChildren" type="int" visibility="package"/>
+        <Field name="numberOfRooms" type="int" visibility="package"/>
+        <Field name="promotion" type="String" visibility="package"/>
+        <Field name="checkin" type="Date" visibility="package"/>
+        <Field name="checkout" type="Date" visibility="package"/>
+        <Field name="hotelId" type="long" visibility="package"/>
+        <Field name="room" type="Room" visibility="private"/>
+        <Field name="pricetotal" type="double" visibility="package"/>
+        <Field name="specialRequests" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getReservationId" returnType="long" visibility="public"/>
+        <Method name="setReservationId" returnType="void" visibility="public">
+          <Argument type="long" name="reservationId"/>
+        </Method>
+        <Method name="getGuestId" returnType="long" visibility="public"/>
+        <Method name="setGuestId" returnType="void" visibility="public">
+          <Argument type="long" name="guestId"/>
+        </Method>
+        <Method name="getNumberOfAdults" returnType="int" visibility="public"/>
+        <Method name="setNumberOfAdults" returnType="void" visibility="public">
+          <Argument type="int" name="numberOfAdults"/>
+        </Method>
+        <Method name="getNumberOfChildren" returnType="int" visibility="public"/>
+        <Method name="setNumberOfChildren" returnType="void" visibility="public">
+          <Argument type="int" name="numberOfChildren"/>
+        </Method>
+        <Method name="getNumberOfRooms" returnType="int" visibility="public"/>
+        <Method name="setNumberOfRooms" returnType="void" visibility="public">
+          <Argument type="int" name="numberOfRooms"/>
+        </Method>
+        <Method name="getPromotion" returnType="String" visibility="public"/>
+        <Method name="setPromotion" returnType="void" visibility="public">
+          <Argument type="String" name="promotion"/>
+        </Method>
+        <Method name="getCheckin" returnType="Date" visibility="public"/>
+        <Method name="setCheckin" returnType="void" visibility="public">
+          <Argument type="Date" name="checkin"/>
+        </Method>
+        <Method name="getCheckout" returnType="Date" visibility="public"/>
+        <Method name="setCheckout" returnType="void" visibility="public">
+          <Argument type="Date" name="checkout"/>
+        </Method>
+        <Method name="getHotelId" returnType="long" visibility="public"/>
+        <Method name="setHotelId" returnType="void" visibility="public">
+          <Argument type="long" name="hotelId"/>
+        </Method>
+        <Method name="getRoom" returnType="Room" visibility="public"/>
+        <Method name="setRoomType" returnType="void" visibility="public">
+          <Argument type="Room" name="room"/>
+        </Method>
+        <Method name="getPricetotal" returnType="double" visibility="public"/>
+        <Method name="getSpecialRequests" returnType="String" visibility="public"/>
+        <Method name="setSpecialRequests" returnType="void" visibility="public">
+          <Argument type="String" name="specialRequests"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Database" package="Model" visibility="public" xPosition="451.0" yPosition="9.0">
+      <Fields>
+        <Field name="jdbcTemplate" type="JdbcTemplate" visibility="private"/>
+        <Field name="datasource" type="DataSource" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getBookings" returnType="ArrayList&lt;Booking&gt;" visibility="public" isStatic="true"/>
+        <Method name="getInstance" returnType="Database" visibility="public" isStatic="true"/>
+        <Method name="findBooking" returnType="int" visibility="public" isStatic="true">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="findBooking" returnType="int" visibility="public" isStatic="true">
+          <Argument type="int" name="phone"/>
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="updateBooking" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="int" name="reservationId"/>
+        </Method>
+        <Method name="createBooking" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="Booking" name="booking"/>
+        </Method>
+        <Method name="deleteBooking" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="int" name="reservationId"/>
+        </Method>
+        <Method name="validateAdmin" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="username"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="numberOfRooms" returnType="int" visibility="public" isStatic="true">
+          <Argument type="String" name="roomType"/>
+          <Argument type="String" name="hotel"/>
+          <Argument type="Date" name="checkin"/>
+          <Argument type="Date" name="checkout"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Hotel" package="Model" visibility="public" xPosition="582.0" yPosition="504.0">
+      <Fields>
+        <Field name="hotelID" type="int" visibility="private"/>
+        <Field name="hotelName" type="String" visibility="private"/>
+        <Field name="totalRooms" type="int" visibility="private"/>
+        <Field name="standard" type="int" visibility="private"/>
+        <Field name="deluxe" type="int" visibility="private"/>
+        <Field name="superior" type="int" visibility="private"/>
+        <Field name="premium" type="int" visibility="private"/>
+        <Field name="suiteHot" type="int" visibility="private"/>
+        <Field name="vineyard" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getHotelID" returnType="int" visibility="public"/>
+        <Method name="setHotelID" returnType="void" visibility="public">
+          <Argument type="int" name="hotelID"/>
+        </Method>
+        <Method name="getHotelName" returnType="String" visibility="public"/>
+        <Method name="setHotelName" returnType="void" visibility="public">
+          <Argument type="String" name="hotelName"/>
+        </Method>
+        <Method name="getTotalRooms" returnType="int" visibility="public"/>
+        <Method name="setTotalRooms" returnType="void" visibility="public">
+          <Argument type="int" name="totalRooms"/>
+        </Method>
+        <Method name="getStandard" returnType="int" visibility="public"/>
+        <Method name="setStandard" returnType="void" visibility="public">
+          <Argument type="int" name="standard"/>
+        </Method>
+        <Method name="getDeluxe" returnType="int" visibility="public"/>
+        <Method name="setDeluxe" returnType="void" visibility="public">
+          <Argument type="int" name="deluxe"/>
+        </Method>
+        <Method name="getSuperior" returnType="int" visibility="public"/>
+        <Method name="setSuperior" returnType="void" visibility="public">
+          <Argument type="int" name="superior"/>
+        </Method>
+        <Method name="getPremium" returnType="int" visibility="public"/>
+        <Method name="setPremium" returnType="void" visibility="public">
+          <Argument type="int" name="premium"/>
+        </Method>
+        <Method name="getSuiteHot" returnType="int" visibility="public"/>
+        <Method name="setSuiteHot" returnType="void" visibility="public">
+          <Argument type="int" name="suiteHot"/>
+        </Method>
+        <Method name="getVineyard" returnType="int" visibility="public"/>
+        <Method name="setVineyard" returnType="void" visibility="public">
+          <Argument type="int" name="vineyard"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Room" package="Model" visibility="public" xPosition="1069.0" yPosition="20.0">
+      <Fields>
+        <Field name="RoomId" type="int" visibility="private"/>
+        <Field name="RoomType" type="String" visibility="private"/>
+        <Field name="basePrice" type="double" visibility="private"/>
+        <Field name="description" type="String" visibility="private"/>
+        <Field name="image" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getRoomId" returnType="int" visibility="public"/>
+        <Method name="setRoomId" returnType="void" visibility="public">
+          <Argument type="int" name="RoomId"/>
+        </Method>
+        <Method name="getRoomType" returnType="String" visibility="public"/>
+        <Method name="setRoomType" returnType="void" visibility="public">
+          <Argument type="String" name="RoomType"/>
+        </Method>
+        <Method name="getDescription" returnType="String" visibility="public"/>
+        <Method name="setDescription" returnType="void" visibility="public">
+          <Argument type="String" name="description"/>
+        </Method>
+        <Method name="getImage" returnType="String" visibility="public"/>
+        <Method name="setImage" returnType="void" visibility="public">
+          <Argument type="String" name="image"/>
+        </Method>
+        <Method name="getBasePrice" returnType="double" visibility="public"/>
+        <Method name="calculateRoomRate" returnType="double" visibility="public">
+          <Argument type="Date" name="checkin"/>
+          <Argument type="Date" name="checkout"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="User" package="Model" visibility="public" xPosition="509.0" yPosition="1160.0">
+      <Fields>
+        <Field name="userId" type="int" visibility="package"/>
+        <Field name="lastName" type="String" visibility="package"/>
+        <Field name="firstName" type="String" visibility="package"/>
+        <Field name="address" type="String" visibility="package"/>
+        <Field name="city" type="String" visibility="package"/>
+        <Field name="country" type="String" visibility="package"/>
+        <Field name="postalCode" type="String" visibility="package"/>
+        <Field name="phoneNumber" type="String" visibility="package"/>
+        <Field name="email" type="String" visibility="package"/>
+        <Field name="pin" type="String" visibility="package"/>
+        <Field name="creditCardType" type="String" visibility="package"/>
+        <Field name="creditCardNumber" type="int" visibility="package"/>
+        <Field name="cvv" type="int" visibility="package"/>
+        <Field name="expMonth" type="String" visibility="package"/>
+        <Field name="expYear" type="int" visibility="package"/>
+        <Field name="notification" type="boolean" visibility="package"/>
+        <Field name="requests" type="String" visibility="package"/>
+        <Field name="dateCreated" type="Date" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="getLastName" returnType="String" visibility="public"/>
+        <Method name="setLastName" returnType="void" visibility="public">
+          <Argument type="String" name="lastName"/>
+        </Method>
+        <Method name="getFirstName" returnType="String" visibility="public"/>
+        <Method name="setFirstName" returnType="void" visibility="public">
+          <Argument type="String" name="firstName"/>
+        </Method>
+        <Method name="getAddress" returnType="String" visibility="public"/>
+        <Method name="setAddress" returnType="void" visibility="public">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="getCity" returnType="String" visibility="public"/>
+        <Method name="setCity" returnType="void" visibility="public">
+          <Argument type="String" name="city"/>
+        </Method>
+        <Method name="getCountry" returnType="String" visibility="public"/>
+        <Method name="setCountry" returnType="void" visibility="public">
+          <Argument type="String" name="country"/>
+        </Method>
+        <Method name="getCode" returnType="String" visibility="public"/>
+        <Method name="setCode" returnType="void" visibility="public">
+          <Argument type="String" name="code"/>
+        </Method>
+        <Method name="getPhone" returnType="String" visibility="public"/>
+        <Method name="setPhone" returnType="void" visibility="public">
+          <Argument type="String" name="phone"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="getPin" returnType="String" visibility="public"/>
+        <Method name="setPin" returnType="void" visibility="public">
+          <Argument type="String" name="pin"/>
+        </Method>
+        <Method name="getCCType" returnType="String" visibility="public"/>
+        <Method name="setCCType" returnType="void" visibility="public">
+          <Argument type="String" name="creditCardType"/>
+        </Method>
+        <Method name="getCCNumber" returnType="int" visibility="public"/>
+        <Method name="setCCNumber" returnType="void" visibility="public">
+          <Argument type="int" name="creditCardNumber"/>
+        </Method>
+        <Method name="getCVV" returnType="int" visibility="public"/>
+        <Method name="setCCV" returnType="void" visibility="public">
+          <Argument type="int" name="cvv"/>
+        </Method>
+        <Method name="getExpMonth" returnType="String" visibility="public"/>
+        <Method name="setExpMonth" returnType="void" visibility="public">
+          <Argument type="String" name="expMonth"/>
+        </Method>
+        <Method name="getExpYear" returnType="int" visibility="public"/>
+        <Method name="setExpYear" returnType="void" visibility="public">
+          <Argument type="int" name="expYear"/>
+        </Method>
+        <Method name="getNotification" returnType="boolean" visibility="public"/>
+        <Method name="setNotification" returnType="void" visibility="public">
+          <Argument type="boolean" name="notification"/>
+        </Method>
+        <Method name="getRequest" returnType="String" visibility="public"/>
+        <Method name="setRequest" returnType="void" visibility="public">
+          <Argument type="String" name="requests"/>
+        </Method>
+        <Method name="getDateCreated" returnType="Date" visibility="public"/>
+        <Method name="setDateCreated" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="room" source="Model.Booking" target="Model.Room" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Database" target="Model.Booking" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Database" target="Model.Database" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Booking" target="Model.Room" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

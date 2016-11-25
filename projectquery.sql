@@ -61,6 +61,15 @@ CREATE TABLE Rooms(
     primary key(ID)
 );
 
+create table admin(
+admin_id bigint auto_increment primary key,
+login varchar(20),
+password varchar(20),
+date_created date
+);
+
+select * from booking;
+
 alter TABLE Rooms add column Description varchar(200);
 alter TABLE Rooms add column Image varchar(50);
 

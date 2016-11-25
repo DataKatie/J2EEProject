@@ -20,10 +20,14 @@
  <bean id="dataSource"
   class="org.springframework.jdbc.datasource.DriverManagerDataSource">
   <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-  <property name="url" value="jdbc:mysql://localhost:3306/waringhouse?zeroDateTimeBehavior=convertToNull [root on Default schema]" />
+  <property name="url" value="jdbc:mysql://localhost:3306/waringhouse?zeroDateTimeBehavior=convertToNull" />
   <property name="username" value="root" />
   <property name="password" value="humber" />
  </bean>
+  <bean id="database" 
+      class="Model.Database">
+      <property name="dataSource"  ref="dataSource" />    
+   </bean>
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"

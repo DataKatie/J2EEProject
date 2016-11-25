@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="AddBooking" package="Controller" visibility="public" xPosition="457.0" yPosition="617.0">
+      <Fields>
+        <Field name="db" type="Database" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="populateForm" returnType="ModelAndView" visibility="public">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+          <Argument type="ModelMap" name="model"/>
+        </Method>
+        <Method name="processBookingRequest" returnType="ModelAndView" visibility="public">
+          <Argument type="User" name="user"/>
+          <Argument type="BindingResult" name="bindingResult"/>
+          <Argument type="ModelMap" name="modelMap"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AdminLogin" package="Controller" visibility="public" xPosition="1499.0" yPosition="122.0">
+      <Fields>
+        <Field name="db" type="Database" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="processAdminLoginRequest" returnType="ModelAndView" visibility="public">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AdminSearch" package="Controller" visibility="public" xPosition="1499.0" yPosition="307.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="processSearchRequest" returnType="ModelAndView" visibility="public">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DeleteBooking" package="Controller" visibility="public" xPosition="876.0" yPosition="454.0">
+      <Fields>
+        <Field name="db" type="Database" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="processDeleteRequest" returnType="ModelAndView" visibility="public">
+          <Argument type="HttpServletRequest" name="request"/>
+          <Argument type="HttpServletResponse" name="response"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Initial" package="Controller" visibility="public" xPosition="7.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="root" returnType="String" visibility="public">
+          <Argument type="ModelMap" name="model"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ModifyBooking" package="Controller" visibility="public" xPosition="785.0" yPosition="20.0">
+      <Fields>
+        <Field name="db" type="Database" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="processModifyRequest" returnType="ModelAndView" visibility="public">
+          <Argument type="Booking" name="booking"/>
+          <Argument type="BindingResult" name="bindingResult"/>
+          <Argument type="ModelMap" name="modelMap"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Search" package="Controller" visibility="public" xPosition="7.0" yPosition="176.0">
+      <Fields>
+        <Field name="roomList" type="ArrayList&lt;Room&gt;" visibility="private"/>
+        <Field name="db" type="Database" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="processSearchRequest" returnType="ModelAndView" visibility="public">
+          <Argument type="Booking" name="booking"/>
+          <Argument type="BindingResult" name="bindingResult"/>
+          <Argument type="ModelMap" name="modelMap"/>
+        </Method>
+        <Method name="availableRooomType" returnType="int" visibility="private">
+          <Argument type="String" name="roomType"/>
+          <Argument type="Date" name="checkin"/>
+          <Argument type="Date" name="checkout"/>
+        </Method>
+        <Method name="isEnoughSpace" returnType="boolean" visibility="private">
+          <Argument type="String" name="roomType"/>
+          <Argument type="int" name="roomsRequested"/>
+        </Method>
+        <Method name="availableRoomList" returnType="ArrayList&lt;Room&gt;" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="SearchResults" package="Controller" visibility="public" xPosition="7.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="processSearchResultRequest" returnType="ModelAndView" visibility="public">
+          <Argument type="HttpServletRequest" name="requeset"/>
+          <Argument type="HttpServletResponse" name="response"/>
+          <Argument type="ModelMap" name="modelMap"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

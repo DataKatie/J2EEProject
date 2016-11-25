@@ -54,7 +54,7 @@
         <div class="container">
             <div class="jumbotron">
                  <h2 class="header">Spring MVC Project</h2>
-                <p class="header">Created by Yuliia Shymbryk</p>    
+                <p class="header">Created by Yuliia Shymbryk and friends</p>    
             </div>
 <form action="loginValidation.htm" method="get"> 
     

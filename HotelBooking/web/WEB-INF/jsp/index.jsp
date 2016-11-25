@@ -44,84 +44,12 @@
             <div class="jumbotron">
                 
                 <h2 class="header">Spring MVC Project</h2>
-                <p class="header">Created by Yuliia Shymbryk</p>    
+                <p class="header">Created by Yuliia Shymbryk and friends</p>    
             </div>
-        <form:form action="submitCheck.htm" modelAttribute="student">
-        <div class="row">
-<div class="col-sm-2">
-    <label for="firstName">First Name: </label> 
-</div>
-            <div class="col-sm-2">
-    <form:input  path="firstName" id="fNameInput"></form:input>
-            </div>
-            <div class="col-sm-8">
-    <form:errors class="error" path="firstName"></form:errors>
-     <br><br>
-    </div>
-  
-</div>
-     <div class="row">
-<div class="col-sm-2">
-    <label for="lastName">Last Name: </label>
-    </div>
-            <div class="col-sm-2">
-     <form:input  path="lastName" id="lNameInput"></form:input>
-      </div>
-            <div class="col-sm-8">
-    <form:errors class="error" path="lastName"></form:errors>
-    <br><br>
-     </div>
-  
-</div>
-     <div class="row">
-<div class="col-sm-2">
-    <label for="email">Email: </label>
-    </div>
-            <div class="col-sm-2">
-      <form:input  path="email" id="emailInput"></form:input>
-      </div>
-            <div class="col-sm-8">
-    <form:errors class="error" path="email"></form:errors>
-     <br><br>
-   </div>
-  
-</div>
-     <div class="row">
-<div class="col-sm-2">
-    <label for="phoneNumber">Phone Number: </label>
-    </div>
-            <div class="col-sm-2">
-      <form:input  path="phoneNumber" id="phoneNumberInput"></form:input>
-       </div>
-            <div class="col-sm-8">
-    <form:errors class="error" path="phoneNumber"></form:errors>
-     <br><br>
-   </div>
-  
-</div>
-     <div class="row">
-<div class="col-sm-2">
-    <label for="semester">Semester: </label>
-    </div>
-            <div class="col-sm-2">
-    <form:select path="semester">  
+        hello world this is a test
+        <c:out value="${firstName}"/> 
+        <c:out value="${test}"/> 
         
-        <form:option value="none" label="Select semester"/>  
-                <c:forEach var="listValue" items="${lists}">
-			  <form:option  value="${listValue.key}"  label="${listValue.value}"/>  
-			</c:forEach>
-               
-           </form:select> 
-                 </div>
-            <div class="col-sm-8">
-    <form:errors class="error" path="semester"></form:errors>
-     <br><br>
-     </div>
-    </div>
-      
-<div class="col-sm-2">
-    <input class="btn" type="submit" value="Submit Information" />   
-</form:form>
 </div>
           <div class="col-sm-10">
 <button class="btn" onclick="location.href='login.htm'">Show the info about students</button>

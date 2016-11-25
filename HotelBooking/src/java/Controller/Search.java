@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Booking;
 import Model.Database;
 import Model.Room;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import javax.validation.Valid;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,8 +36,8 @@ public class Search {
     private Database db = Database.getInstance();
     /*none of these methods are implemented*/
     
-    @RequestMapping(method=RequestMethod.POST)
-    public ModelAndView processSearchRequest(@Valid Booking booking,Binding Result bindingResult, ModelMap modelMap){
+    //@RequestMapping(method=RequestMethod.POST)
+    public ModelAndView processSearchRequest(@Valid Booking booking,BindingResult bindingResult, ModelMap modelMap){
         //pass the list to the searchResults controller
         return new ModelAndView();
     }

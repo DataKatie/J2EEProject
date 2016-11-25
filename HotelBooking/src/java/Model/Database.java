@@ -15,17 +15,36 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * @author Katie
  */
 public class Database {
+    
  private JdbcTemplate jdbcTemplate;
- DataSource datasource;
+ DataSource dataSource;
+ 
+    public void setDataSource(DataSource dataSource) {
+      this.dataSource = dataSource;
+      this.jdbcTemplate = new JdbcTemplate(dataSource);
+   }
  
  public static ArrayList<Booking> getBookings(){
    ArrayList<Booking> mylist = new ArrayList<Booking>();
      return mylist;
  }
 
- private Database(){
+ public Database(){
  }
  
+ public String getUserFirstName(){ 
+     String firstName;   
+     if(jdbcTemplate == null)
+                firstName = "this failed horribly";
+     else{
+        firstName = jdbcTemplate.queryForObject(
+        "select first_name from user where user_id = ?",
+        new Object[]{1}, String.class);
+          
+          }
+        return firstName;
+        
+             }
  public static Database getInstance(){
  //THIS IS NOT THE CORRECT IMPLEMENTATION!!!!! MAKE INTO A SINGLETON
      return new Database();
