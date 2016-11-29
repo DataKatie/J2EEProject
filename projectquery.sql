@@ -52,6 +52,9 @@ CREATE TABLE `user` (
    PRIMARY KEY (`user_id`),
    UNIQUE KEY `user_id_UNIQUE` (`user_id`)
  ) ;
+ 
+ alter table user modify column date_created datetime NOT NULL DEFAULT CURRENT_TIMESTAMP();
+ 
 
 CREATE TABLE Rooms(
     ID            INT(5)        NOT NULL   AUTO_INCREMENT,
@@ -80,4 +83,13 @@ alter table booking modify hotelId int(5);
 alter table booking add foreign key (RoomTypeID) references rooms(id);
 alter table booking add foreign key (hotelId) references hotels(hotelId);
 
+
+insert into booking (GuestId, hotelId, NoAdults, NoChildren, NoRooms, Promotion, CheckIn, CheckOut, roomTypeId, PriceTotal, SpecialRequests) values (-5415875016310049440,1234,2,0,1,null,3916-12-27,3916-12-29,0,0.0,"");
+
 select * from hotels;
+select * from user;
+insert into user VALUES (1, "Sullivan", "Katie", "2559 Lakeshore Blvd W", "Etobicoke", "Canada", "M8V1E5", "647-233-6056", "katie.m.sullivan@gmail.com", "1234", "Mastercard", "13456000950452", "911", "09", "20", 0, NOW());
+insert into rooms (HotelId, RoomType, Price, Description, Image) VALUES (1, 1, 240, "Standard room.", "standard.jpg");
+
+alter table booking modify column CheckIn datetime not null;
+alter table booking modify column CheckOut datetime not null;

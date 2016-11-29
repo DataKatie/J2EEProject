@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.Date;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -12,7 +13,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class User {
     
     
-    int userId;
+    long id;
     
     @Pattern(regexp = "[A-Za-z]+", message="A last name should contain only letters and cannot be empty")
     String lastName;
@@ -45,17 +46,17 @@ public class User {
     String creditCardType;
     
     //the length validation should be done depending on how a controller will validate this field
-    @NotEmpty (message="Enter a credit card number")
+    @NotNull (message="Enter a credit card number")
     int creditCardNumber;
     
-     @NotEmpty (message="Enter a cvv code")
+     @NotNull (message="Enter a cvv code")
     int cvv;
     
      
     @NotEmpty (message="Choose an expiry date (month)") 
     String expMonth;
     
-    @NotEmpty (message="Choose an expiry date (year)") 
+    @NotNull (message="Choose an expiry date (year)") 
     int expYear;
     
     boolean notification;
@@ -64,10 +65,13 @@ public class User {
     
     Date dateCreated;
     
-    public int getId() {
-            return userId;
+    public long getId() {
+            return id;
         }
-    
+    public void setId(long id){
+        this.id = id;
+        
+    }
     public String getLastName() {
             return lastName;
         }
@@ -109,19 +113,19 @@ public class User {
         this.country = country;
     }
     
-     public String getCode() {
+     public String getPostalCode() {
             return postalCode;
         }
     
-    public void setCode(String code){
+    public void setPostalCode(String code){
         this.postalCode = code;
     }
     
-     public String getPhone() {
+     public String getPhoneNumber() {
             return phoneNumber;
         }
     
-    public void setPhone(String phone){
+    public void setPhoneNumber(String phone){
         this.phoneNumber = phone;
     }
     
@@ -142,27 +146,27 @@ public class User {
         this.pin = pin;
     }
     
-     public String getCCType() {
+     public String getCreditCardType() {
             return creditCardType;
         }
     
-    public void setCCType(String creditCardType){
+    public void setCreditCardType(String creditCardType){
         this.creditCardType = creditCardType;
     }
     
-    public int getCCNumber() {
+    public int getCreditCardNumber() {
             return creditCardNumber;
         }
     
-    public void setCCNumber(int creditCardNumber){
+    public void setCreditCardNumber(int creditCardNumber){
         this.creditCardNumber = creditCardNumber;
     }
     
-    public int getCVV() {
+    public int getCvv() {
             return cvv;
         }
     
-    public void setCCV(int cvv){
+    public void setCvv(int cvv){
         this.cvv = cvv;
     }
     
@@ -192,16 +196,16 @@ public class User {
     }
     
     
-     public String getRequest() {
+     public String getRequests() {
             return requests;
         }
     
-    public void setRequest(String requests){
+    public void setRequests(String requests){
         this.requests = requests;
     }
     
     
-     public Date getDateCreated() {
+    /* public Date getDateCreated() {
             return dateCreated;
         }
     
@@ -210,5 +214,5 @@ public class User {
      //one of the options - to format it
     public void setDateCreated(){
         this.dateCreated = new Date();
-    }
+    } */
 }
