@@ -47,7 +47,7 @@ public class User {
     
     //the length validation should be done depending on how a controller will validate this field
     @NotNull (message="Enter a credit card number")
-    int creditCardNumber;
+    String creditCardNumber;
     
      @NotNull (message="Enter a cvv code")
     int cvv;
@@ -154,11 +154,11 @@ public class User {
         this.creditCardType = creditCardType;
     }
     
-    public int getCreditCardNumber() {
+    public String getCreditCardNumber() {
             return creditCardNumber;
         }
     
-    public void setCreditCardNumber(int creditCardNumber){
+    public void setCreditCardNumber(String creditCardNumber){
         this.creditCardNumber = creditCardNumber;
     }
     

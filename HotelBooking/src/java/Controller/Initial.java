@@ -65,10 +65,10 @@ private WebApplicationContext context;
      catch (Exception e){
          errorLog = e.toString();
      }
-    if(database.getUserFirstName() == null)
+    //if(database.getUserFirstName() == null)
     user.setFirstName("this has failed horribly");
-    else
-     user.setFirstName(database.getUserFirstName());
+    //else
+     //user.setFirstName(database.getUserFirstName());
      
     model.addAttribute("firstName", user.getFirstName());
     model.addAttribute("test", errorLog);

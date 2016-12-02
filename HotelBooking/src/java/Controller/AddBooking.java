@@ -19,10 +19,13 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -44,6 +47,7 @@ public class AddBooking {
 
     Database db = new Database();
   
+ 
     
      
     @RequestMapping(method=RequestMethod.GET)
@@ -58,25 +62,7 @@ public class AddBooking {
         
     }
     
-   /*@RequestMapping(value="/populateuser", method=RequestMethod.POST)
-    public ModelAndView populateForm(@ModelAttribute User user, HttpServletRequest request, HttpServletResponse response, ModelMap model){
-        DataSource ds = (DataSource)context.getBean("dataSource");
-        db.setDataSource(ds);
-        String userEmail = user.getEmail();
-        String userPin = user.getPin();
-        User populatedUser = db.retrieveUser(userPin, userEmail);
-        String error = "";
-        //retrieve the user from the database, and populate the form
-        //create a session variable for the user
-       if(populatedUser == null){
-           error = "Pin and email combination was not located in the database. Please try again.";
-           
-       }
-        model.addAttribute(error);
-        model.addAttribute(populatedUser);
-        return new ModelAndView("createBooking");
-        
-    } */
+  
         
     @Autowired
     private WebApplicationContext context;
@@ -94,15 +80,15 @@ public class AddBooking {
                 booking = new Booking();
                 Calendar cal = Calendar.getInstance();
                 Date date = new Date(cal.getTimeInMillis());
-                booking.setCheckin(date);
-                booking.setCheckout(date);
+                booking.setCheckIn(date);
+                booking.setCheckOut(date);
                 booking.setHotelId(1234);
-                booking.setNumberOfAdults(2);
-                booking.setNumberOfChildren(0);
-                booking.setNumberOfRooms(1);
-                Room room = new Room();
-                room.setRoomId(1);
-                booking.setRoomType(room);
+                booking.setNoAdults(2);
+                booking.setNoChildren(0);
+                booking.setNoRooms(1);
+                booking.setRoomType("Standard");
+                booking.setRoomId(1);
+                booking.setPriceTotal(1000);
             }
             
            /*else{
@@ -123,19 +109,28 @@ public class AddBooking {
         map.addAttribute(user);
         if(user.getId()==0){
                 noUser = true;
-                Long guestId = new Random().nextLong();
-                user.setId(guestId);
-                booking.setGuestId(guestId);
+                //Long guestId = new Random().nextLong();
+                //user.setId(guestId);
+                //booking.setGuestId(guestId);
             }
         else {
             booking.setGuestId(user.getId());
         }
+       
         booking.setSpecialRequests(user.getRequests());
         if (noUser){
-        db.addUser(user);
+        User existingUser = db.retrieveUser(user.getEmail(), user.getPin());
+            if(existingUser.getId() == 0){
+                 db.addUser(user);
+                User newlyCreated = db.retrieveUserId(user.getEmail());
+                 booking.setGuestId(newlyCreated.getId());
         }
+            else{
+             booking.setGuestId(existingUser.getId());   
+            }}
         db.createBooking(booking);
-        
+        long resId = db.retrieveReservationId(booking.getGuestId(), booking.getCheckIn(), booking.getCheckOut()).getReservationId();
+        map.addAttribute("resId", resId);
          }
         return new ModelAndView("thankYou"); 
     }

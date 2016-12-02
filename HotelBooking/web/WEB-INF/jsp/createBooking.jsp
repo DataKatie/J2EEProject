@@ -15,12 +15,395 @@
        
 
         <title>Create Booking</title>
+        <style>BODY {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 11px;
+}
+
+A {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 11px;
+}
+
+TD {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 11px;
+}
+
+UL {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 11px;
+}
+
+OL {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 11px;
+}
+
+INPUT {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 11px;
+}
+
+SELECT {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 11px;
+}
+
+.BodyBackgroundOld {
+	BACKGROUND-COLOR: #ffffff;
+	MARGIN-LEFT: 0px;
+	MARGIN-TOP: 1px;
+	PADDING-BOTTOM: 20px;
+	PADDING-LEFT: 3px;
+	PADDING-RIGHT: 3px;
+	PADDING-TOP: 0px;
+	POSITION: static;
+	WIDTH: 995px;
+}
+
+.BodyBackground {
+	BACKGROUND-COLOR: #FFFFFF;
+	MARGIN-LEFT: 0px;
+	MARGIN-TOP: 1px;
+	PADDING-BOTTOM: 20px;
+	PADDING-LEFT: 3px;
+	PADDING-RIGHT: 3px;
+	PADDING-TOP: 0px;
+	POSITION: static;
+}
+
+.HeaderGraphics {
+	PADDING-LEFT: 33px;
+	PADDING-TOP: 70px;
+	Z-INDEX: 1;
+}
+
+.FunctionButtons {
+	BACKGROUND-COLOR: transparent;
+	COLOR: #000000;
+	FONT-SIZE: 11px;
+	FONT-WEIGHT: bold;
+	HEIGHT: 26px;
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-RIGHT: 0px;
+	PADDING-TOP: 0px;
+}
+
+.HeaderText1 {
+	COLOR: #1A0000;
+	FONT-SIZE: 15px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 20px;
+	PADDING-LEFT: 5px;
+	PADDING-TOP: 3px;
+	PADDING-BOTTOM: 3px;
+}
+
+.HeaderText2 {
+	BACKGROUND-COLOR: #dfddcc;
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 20px;
+	PADDING-LEFT: 5px;
+	PADDING-TOP: 2px;
+	PADDING-BOTTOM: 2px;
+}
+
+.BodyText {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 11px;
+}
+
+.RateLine {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 11px;
+}
+
+.FooterText {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 11px;
+	TEXT-ALIGN: center;
+}
+
+.StayInformationHeader {
+	BACKGROUND-COLOR: #dfddcc;
+	COLOR: #000000;
+	FONT-SIZE: 11px;
+	FONT-WEIGHT: bold;
+	HEIGHT: 26px;
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 8px;
+	PADDING-RIGHT: 0px;
+	PADDING-TOP: 0px;
+}
+
+.StayInformationDetails {
+	background-color: #f2f2e2;
+	COLOR: #000000;
+	FONT-SIZE: 8pt;
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 5px;
+	PADDING-RIGHT: 0px;
+	PADDING-TOP: 0px;
+}
+
+.StayInformationThumbNail {
+	background-color: #f2f2e2;
+	COLOR: #000000;
+	FONT-SIZE: 8pt;
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 5px;
+	PADDING-RIGHT: 0px;
+	PADDING-TOP: 0px;
+}
+
+.EnhanceYourStay {
+	COLOR: #000000;
+	FONT-SIZE: 11px;
+	FONT-WEIGHT: bold;
+	HEIGHT: 26px;
+}
+
+.SignInSectionHeader {
+	COLOR: #000000;
+	FONT-SIZE: 11px;
+	FONT-WEIGHT: bold;
+	HEIGHT: 26px;
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 8px;
+	PADDING-RIGHT: 0px;
+	PADDING-TOP: 0px;
+}
+
+.SignInSectionDetails {
+	COLOR: #000000;
+	FONT-SIZE: 11px;
+	FONT-WEIGHT: normal;
+	HEIGHT: 26px;
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 8px;
+	PADDING-RIGHT: 0px;
+	PADDING-TOP: 0px;
+}
+
+.DetailsText {
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.AvgRateText {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 11px;
+	FONT-WEIGHT: bold;
+}
+
+.ErrorText {
+	COLOR: #d5813b;
+	FONT-SIZE: 15px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.RoomTypeText {
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.PopupHeader1 {
+	COLOR: #d5813b;
+	FONT-SIZE: 15px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.PopupHeader2 {
+	COLOR: #d5813b;
+	FONT-SIZE: 15px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.PopupText1 {
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.PopupText2 {
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.CorpInfo {
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.GroupInfo {
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.InstructionText {
+	COLOR: black;
+	FONT-SIZE: 13px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.DateLabelText {
+	FONT-FAMILY: Arial, Verdana, sans-serif;
+	FONT-SIZE: 9px;
+}
+
+.SurveyText1 {
+	FONT-SIZE: 15px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 15px;
+}
+
+.SurveyText2 {
+	FONT-SIZE: 15px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 10px;
+}
+
+.SurveyText3 {
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.SurveyQuestions {
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.SurveyRankings {
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: bold;
+	LINE-HEIGHT: 10px;
+	PADDING-BOTTOM: 3px;
+	TEXT-ALIGN: center;
+}
+
+.ThumbNailRoomTypeHeader {
+	FONT-SIZE: 20px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 25px;
+	PADDING-BOTTOM: 3px;
+}
+
+.ThumbNailRoomTypeDescription {
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.ThumbNailRateTypeSelectTitle {
+	background-color: #dfddcc;
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 12px;
+	PADDING-BOTTOM: 0px;
+	}
+
+.ThumbNailRateTypeSelect {
+	background-color: #dfddcc;
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 12px;
+	PADDING-BOTTOM: 0px;
+}
+
+.ThumbNailRateTypeTitle {
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 12px;
+	PADDING-BOTTOM: 0px;
+	}
+
+.ThumbNailRateTypeHeader {
+	FONT-SIZE: 15px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.ThumbNailRateTypeDescription {
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: normal;
+	LINE-HEIGHT: 20px;
+	PADDING-BOTTOM: 3px;
+}
+
+.ThumbNailAverageRate {
+	FONT-SIZE: 16px;
+	FONT-WEIGHT: bold;
+	line-height: 20px;
+}
+.ThumbNailBeforeDiscountRate {
+	FONT-SIZE: 16px;
+	FONT-WEIGHT: normal;
+	line-height: 20px;
+	text-decoration: line-through;
+}
+.SelectButton
+{
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: bold;
+	background-color: #4C864C;
+	border: solid 5px #4C864C;
+	display: inline-block;
+	color: #FFFFFF;
+}
+.SelectButton:hover
+{
+	background-color: #00E600;
+	border: solid 5px #00E600;
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25-Nov-2016, 2:15:23 PM
+    Author     : Katie
+*/
+
+</style>
+        
+        
     </head>
     <body class="BodyBackground">
         <h1>Create a booking</h1>
         ${errorMessage}
         ${errorMsg}
-        ${user.firstName}
+       
 <table border="0" cellpadding="0" cellspacing="0" align="center" width="1024">
 <tr>
 <td width="60%"></td>
@@ -81,7 +464,7 @@
      <form:input  path="lastName" id="lastNameInput"></form:input>
            
     <form:errors class="error" path="lastName"></form:errors>
-    <!--<input type="text" name="LastName" size="20" maxlength="20" value=""> --></td>
+   </td>
 </tr>
 <tr>
 <td align="right">First Name
@@ -165,7 +548,7 @@
 <td align="right">Credit Card Number
                       :
                     </td>
-<td colspan="2"><form:input  path="creditCardNumber" id="creditCardNumberInput"></form:input>
+<td colspan="2"><form:input path="creditCardNumber" id="creditCardNumberInput"></form:input>
            
     <form:errors class="error" path="creditCardNumber"></form:errors></td>
 </tr>

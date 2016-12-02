@@ -1,22 +1,24 @@
+
 create database waringHouse;
 use waringHouse;
-create table Booking (ReservationId bigint primary key,
+create table Booking (ReservationId bigint primary key auto_increment,
 GuestId bigint not null,
-HotelId bigint not null,
 NoAdults int,
 NoChildren int,
 NoRooms int not null,
 Promotion varchar(30),
 CheckIn date not null,
 CheckOut date not null,
-roomTypeId bigint,
+hotelId int(5),
+roomId int(5),
+roomType varchar(20),
 PricePerNight double,
 PriceTotal double,
 DinnerReservations varchar(50),
 SpecialRequests varchar(300)
  );
  
- select * from booking;
+
  
  CREATE TABLE Hotels(
     HotelID        INT(5)        NOT NULL   AUTO_INCREMENT,
@@ -48,19 +50,22 @@ CREATE TABLE `user` (
    `exp_month` int(11) NOT NULL,
    `exp_year` int(11) NOT NULL,
    `offers_notification` bit(1) DEFAULT b'0',
-   `date_created` datetime NOT NULL,
+   `date_created` datetime NOT NULL DEFAULT Current_Timestamp(),
    PRIMARY KEY (`user_id`),
    UNIQUE KEY `user_id_UNIQUE` (`user_id`)
  ) ;
- 
- alter table user modify column date_created datetime NOT NULL DEFAULT CURRENT_TIMESTAMP();
- 
+ select * from booking;
+ select * from user;
+
+select reservationId, guestId, NoAdults, NoChildren, NoRooms, Promotion, CheckIn, CheckOut, hotelId, roomId, RoomType, PricePerNight, PriceTotal, DinnerReservations from booking join user on (GuestId = user_id) where reservationId = 2 and credit_card_number = 23893289329329 and credit_card_type="American Express";
 
 CREATE TABLE Rooms(
     ID            INT(5)        NOT NULL   AUTO_INCREMENT,
     HotelID        INT(5)        NOT NULL REFERENCES Hotels(HotelID),
     RoomType    varchar(50)    NOT NULL,
     Price        DECIMAL(5,2)NOT NULL,
+    Description varchar(200),
+	Image varchar(50),
     primary key(ID)
 );
 
@@ -73,23 +78,23 @@ date_created date
 
 select * from booking;
 
-alter TABLE Rooms add column Description varchar(200);
-alter TABLE Rooms add column Image varchar(50);
-
-select * from booking;
-alter table booking modify roomTypeId int(5);
-alter table booking modify hotelId int(5);
-
-alter table booking add foreign key (RoomTypeID) references rooms(id);
+alter table booking add foreign key (RoomId) references rooms(id);
 alter table booking add foreign key (hotelId) references hotels(hotelId);
 
 
-insert into booking (GuestId, hotelId, NoAdults, NoChildren, NoRooms, Promotion, CheckIn, CheckOut, roomTypeId, PriceTotal, SpecialRequests) values (-5415875016310049440,1234,2,0,1,null,3916-12-27,3916-12-29,0,0.0,"");
-
-select * from hotels;
+select * from booking;
 select * from user;
+select * from hotels;
 insert into user VALUES (1, "Sullivan", "Katie", "2559 Lakeshore Blvd W", "Etobicoke", "Canada", "M8V1E5", "647-233-6056", "katie.m.sullivan@gmail.com", "1234", "Mastercard", "13456000950452", "911", "09", "20", 0, NOW());
 insert into rooms (HotelId, RoomType, Price, Description, Image) VALUES (1, 1, 240, "Standard room.", "standard.jpg");
 
-alter table booking modify column CheckIn datetime not null;
-alter table booking modify column CheckOut datetime not null;
+select ReservationId from booking where guestId = 9 and CheckIn = 2016-12-01 and CheckOut = 2016-12-01;
+
+alter table rooms add roomName varchar(50);
+
+insert into hotels values (1234, "WaringInn", 15, 5, 4, 3, 2, 1, 1);
+
+select user_id, last_name, first_name, address, city, country, postal, phone_number, email_address, pin, credit_card_type, credit_card_number, cvv_code, exp_month, exp_year,offers_notification from user where pin = 5432 and email_address = "nom@NOM.com";
+
+select reservationId, guestId, NoAdults, NoChildren, NoRooms, Promotion, CheckIn, CheckOut, hotelId, roomId, RoomType, PricePerNight, PriceTotal from booking join user on (GuestId = user_id) where reservationId = 2 and credit_card_number =  23893289329329;
+                    

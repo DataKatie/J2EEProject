@@ -3,12 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/src/java/Model/User.java</file>
             <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/src/java/Controller/AddBooking.java</file>
-            <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/src/java/Controller/PopulateUser.java</file>
-            <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/src/java/Model/Database.java</file>
             <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/web/WEB-INF/jsp/thankYou.jsp</file>
+            <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/web/WEB-INF/jsp/deleteBooking.jsp</file>
+            <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/web/WEB-INF/jsp/editBooking.jsp</file>
             <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/src/java/Controller/Search.java</file>
+            <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/src/java/Controller/EditController.java</file>
+            <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/src/java/Model/User.java</file>
+            <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/src/java/Model/Database.java</file>
+            <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/src/java/Controller/DeleteBooking.java</file>
             <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/web/WEB-INF/jsp/createBooking.jsp</file>
             <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/src/java/Model/Booking.java</file>
             <file>file:/C:/Users/Katie/Documents/Term%203/j2ee/group%20project%20hotel/github/J2EEProject/HotelBooking/src/java/Controller/Initial.java</file>
